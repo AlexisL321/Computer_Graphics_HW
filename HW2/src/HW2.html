@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW2_Alexis_Liu</title>
+</head>
+<body>
+<label>HW2_Alexis_Liu</label>
+<br/>
+<h1>How to play with it:</h1>
+<ol>
+    <li>first set the parameters.</li>
+    <li>then hit the "Start" button.</li>
+    <li>then hit "Reset" button to reset the whole thing.</li>
+</ol>
+This is a thrower that allows you to change the angle the force applied to throw the object (i.e. the initial speed of the object once thrown).
+The yellow dot at the end of the canvas is your target. You can see the trajectory once hit "start".
+Can you find the exact speed and angle to hit the target?
+
+<br/>
+
+<canvas id="MyCanvas" width="600" height="600" ></canvas>
+<br/>
+<label> Change the angle at which the square is thrown :</label>
+<br/>
+<label>0</label><input id="angle" type="range" max="90" min="0" step="1"/><label>90</label>
+<br/>
+<label> Change the initial velocity of the square</label>
+<br/>
+<label>30</label><input id="velocity" type="range" max="100" min="30" step="1"/><label>100</label>
+<br/>
+
+<button id="reset">Reset</button>
+<br/>
+<button id="start">Start</button>
+<script src="HW2.js"></script>
+</body>
+</html>

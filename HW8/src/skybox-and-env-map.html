@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WebGL Reflection Mapping With Skybox</title>
+
+<!-- This example combines a skybox with a fully reflective object.
+     The skybox and teapot can be rotated independently. The object
+     seems to be reflecting its environment, but it's really just that
+     the teapot and skybox use the same cubemap texture.  To get this
+     to work, I use two shader programs, one for the skybox and one for the
+     teapot.  To get the reflection map to work with a rotatable skybox,
+     the reflected ray in the teapot shader is transformed by the
+     inverse of the view transform rotation matrix.  (The view transform
+     is applied to both the skybox and the teapot.  The teapot is
+     rotated by an additional modeling transform. -->
+
+<script src="gl-matrix-min.js"></script>
+<script src="simple-rotator.js"></script>
+<script src="basic-object-models-IFS.js"></script>
+<script src="teapot-model-IFS.js"></script>
+
+<script src="helper.js"></script>
+
+</head>
+<body onload="init()" style="background-color:#DDD">
+
+<h2 id="headline">WebGL Reflection Map With Skybox</h2>
+
+<noscript><hr><h3>This page requires Javascript and a web browser that supports WebGL</h3><hr></noscript>
+
+<p id="message" style="font-weight:bold">Drag on the picture to rotate the view.<br>
+Use arrow keys to rotate the object. Home or Enter key resets view.</p>
+
+<p><label><b>The Reflective Object:</b> <select id="object">
+    <option value="0">Cube</option>
+    <option value="1">Sphere</option>
+    <option value="2">Cylinder</option>
+    <option value="3">Cone</option>
+    <option value="4">Torus</option>
+    <option value="5">Teapot</option>
+</select></label>
+<button id="reset" style="margin-left:40px">Reset View</button>
+</p>
+
+
+<div id="canvas-holder">
+
+    <canvas width=600 height=600 id="webglcanvas"></canvas>
+
+</div>
+
+
+</body>
+</html>
+
